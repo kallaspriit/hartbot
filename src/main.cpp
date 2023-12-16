@@ -1,3 +1,5 @@
+// https://github.com/kallaspriit/hartbot
+
 #include <Arduino.h>
 
 // printing with stream operator helper functions (adds Serial << "Hey"; functionality)
@@ -31,7 +33,7 @@ const int POWER_MAX = 1020;   // maximum ADC reading for max speed potentiometer
 // digital-analog-converter settings
 const int ANALOG_OUTPUT_RANGE = 512;
 
-// minimum power used when max power potentiometer is at minimal setting (less and it won't move)
+// minimum power used when max power potentiometer is at minimal setting
 constexpr float MIN_POWER_PERCENTAGE = 30.0f;
 constexpr int MIN_POWER_OUTPUT = (int)((MIN_POWER_PERCENTAGE / 100.0f) * (float)ANALOG_OUTPUT_RANGE);
 
@@ -73,7 +75,7 @@ void setup()
   // use the built-in debug led on the board
   pinMode(LED_BUILTIN, OUTPUT);
 
-  // set anlog output range
+  // set analog output range
   analogWriteRange(ANALOG_OUTPUT_RANGE);
 }
 
